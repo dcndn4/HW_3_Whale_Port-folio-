@@ -1,0 +1,45 @@
+List of stocks under consideration
+ for my whale assignment portfolio
+
+
+
+Top Contenders - /ESG
+
+COST_CostCo
+PLUG_Plug Power
+SPOT_Spotify
+
+Other positive mainly
+
+AAPL_Apple
+TWTR_Twitter
+SPOT_Spotify
+
+Health & Pharm Sector
+
+MRNA_Moderna
+UNH_UnitedHealth Group
+
+
+FinTech & related
+
+AMP_Ameriprise
+BAC_Bank of America
+
+
+Based locally
+
+FAST_Fastenal
+ECL_Ecolab
+GIS_Gen Mills
+BBY_Best Buy
+XEL_Xcel Energy
+DGII_Digi International
+CPHC_Canterbury Park
+TGT_Target
+DLX_Deluxe
+AMP_Ameriprise Fin
+HRL_Hormel Foods
+MMM_3M
+OTTR_Otter Tail
+TTC_Toro
