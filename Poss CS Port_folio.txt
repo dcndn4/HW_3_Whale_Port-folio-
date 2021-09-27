@@ -33,29 +33,37 @@ BAC_Bank of America
 ACN_Accenture  _ Info Tech
 ADP_Automatic Data Processing - Info Tech (PR processing)
 ETFC_E*Trade  _ Financials
+MS_Morgan Stanley  __ Financials
+NDAQ__Nasdaq, Inc __ Financials
 
-Based locally
+Based locally/regionally
 
-FAST_Fastenal
+FAST_Fastenal  _ Industrials
 ECL_Ecolab  _ Materials
-GIS_Gen Mills
+GIS_Gen Mills  _  Consumer Staples
 BBY_Best Buy  - Consumer Discretionary
+GWW_Grainger   _ Industrials
 XEL_Xcel Energy
 DGII_Digi International
 CPHC_Canterbury Park
 TGT_Target
 DLX_Deluxe
 AMP_Ameriprise Fin
-HRL_Hormel Foods
+HRL_Hormel Foods   _ Consumer Staples
 MMM_3M _ Industrials
 OTTR_Otter Tail
 TTC_Toro
 
 Also of interest
 
+HAS_Hasbro  __  Consumer Discretionary
 Ansys - info tech
 Aon plc - Financials
 Assurant - Financials
+JPM_JP Morgan Chase  __ Financials
+Kohl's
+Kraft Heinz
+LNC_Lincoln National
 
 based in Texas:
 
