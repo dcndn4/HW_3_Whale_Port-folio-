@@ -10,11 +10,15 @@ COST_CostCo
 PLUG_Plug Power
 SPOT_Spotify
 
-Other positive mainly
+Info Tech etc
 
 AAPL_Apple
-TWTR_Twitter
+AKAM_Akamai Tech  _ Info Tech
+AMD_Adv Micro Dev _ Info Tech
+CSCO_Cisco _ Info Tech
+CTXS_Citrix _ Info Tech
 SPOT_Spotify
+TWTR_Twitter
 
 Health & Pharm Sector
 
@@ -24,16 +28,17 @@ UNH_UnitedHealth Group
 
 FinTech & related
 
-AMP_Ameriprise
+AMP_Ameriprise _ Financials
 BAC_Bank of America
-
+ACN_Accenture  _ Info Tech
+ADP_Automatic Data Processing - Info Tech (PR processing)
 
 Based locally
 
 FAST_Fastenal
 ECL_Ecolab
 GIS_Gen Mills
-BBY_Best Buy
+BBY_Best Buy  - Consumer Discretionary
 XEL_Xcel Energy
 DGII_Digi International
 CPHC_Canterbury Park
@@ -41,6 +46,16 @@ TGT_Target
 DLX_Deluxe
 AMP_Ameriprise Fin
 HRL_Hormel Foods
-MMM_3M
+MMM_3M _ Industrials
 OTTR_Otter Tail
 TTC_Toro
+
+Also of interest
+
+Ansys - info tech
+Aon plc - Financials
+Assurant - Financials
+
+based in Texas:
+
+CenterPoint Energy
