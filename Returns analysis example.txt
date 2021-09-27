@@ -1,0 +1,15 @@
+Example - returns analysis (3.2 exercise)
+
+    What are the average daily returns over each date range?
+        1 Year = 0.04538 or 4.53%
+        3 Year = 0.03455 or 3.45%
+        5 Year = 0.02304 or 2.30%
+        10 Year = 0.01488 or 1.49%
+
+    What insights could this provide in regards to wanting to trade AMD stock in the long-term vs. short-term?
+
+    The data shows that AMD had an average daily return over the last 1-year time frame of 0.004538, or 4.53%. This compares with long-term average daily returns of, for example, 3.45% for a 3 year horizon, and 1.49% for a 10 year horizon. By contrasting the short-run (1 year) trend against the long run trend (10 years), it’s apparent that AMD has had much stronger performance only recently.
+
+    As to what this foretells for an investor looking to buy AMD stock now, however, is less clear: it’s possible that this 1-year performance signals a dramatic change in AMD’s business model, and that this strong performance will continue. On the other hand, the most recent year’s could just be an anomaly, and that performance for AMD will revert to its long run trend.
+
+    A third and entirely alternative explanation is that the equity market overall experienced a boom over this last year, and that AMD—like all stocks in the market—rose in value. In the next unit, you will learn how to adjust for these market effects, so that you can evaluate stock performance from year-to-year on a more even measure.

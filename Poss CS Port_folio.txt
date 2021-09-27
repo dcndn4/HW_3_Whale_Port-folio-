@@ -6,7 +6,7 @@ List of stocks under consideration
 Top Contenders - /ESG
 
 MORN_Morningstar
-COST_CostCo
+COST_CostCo  _ Consumer staples
 PLUG_Plug Power
 SPOT_Spotify
 
@@ -15,7 +15,7 @@ Info Tech etc
 AAPL_Apple
 AKAM_Akamai Tech  _ Info Tech
 AMD_Adv Micro Dev _ Info Tech
-CSCO_Cisco _ Info Tech
+CSCO_Cisco _ Info Tech 
 CTXS_Citrix _ Info Tech
 SPOT_Spotify
 TWTR_Twitter
@@ -32,11 +32,12 @@ AMP_Ameriprise _ Financials
 BAC_Bank of America
 ACN_Accenture  _ Info Tech
 ADP_Automatic Data Processing - Info Tech (PR processing)
+ETFC_E*Trade  _ Financials
 
 Based locally
 
 FAST_Fastenal
-ECL_Ecolab
+ECL_Ecolab  _ Materials
 GIS_Gen Mills
 BBY_Best Buy  - Consumer Discretionary
 XEL_Xcel Energy
