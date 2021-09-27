@@ -5,6 +5,7 @@ List of stocks under consideration
 
 Top Contenders - /ESG
 
+MORN_Morningstar
 COST_CostCo
 PLUG_Plug Power
 SPOT_Spotify
