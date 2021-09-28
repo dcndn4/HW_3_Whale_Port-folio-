@@ -35,6 +35,7 @@ ADP_Automatic Data Processing - Info Tech (PR processing)
 ETFC_E*Trade  _ Financials
 MS_Morgan Stanley  __ Financials
 NDAQ__Nasdaq, Inc __ Financials
+PAYX_Paychex Inc.  __ Info Tech
 
 Based locally/regionally
 
@@ -52,6 +53,7 @@ AMP_Ameriprise Fin
 HRL_Hormel Foods   _ Consumer Staples
 MMM_3M _ Industrials
 OTTR_Otter Tail
+PFG_Principal Financial Group __ Financials
 TTC_Toro
 
 Also of interest
@@ -64,7 +66,17 @@ JPM_JP Morgan Chase  __ Financials
 Kohl's
 Kraft Heinz
 LNC_Lincoln National
+NFLX_Netflix  __ Info Tech
+NLSN_Nielsen Holdings _ Industrials
+PYPL_Paypal  __ Info Tech
+PFE_Pfizer Inc.  __ Health Care
+QCOM_Qualcomm Inc  __ Info Tech
+RHT_Red Hat, Inc  __ Info Tech (parent = IBM)
+
 
 based in Texas:
 
+AT&T
 CenterPoint Energy
+Oracle Corp
+
