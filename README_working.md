@@ -110,9 +110,18 @@ Correlations:
                     
 (To work with correlation and pandas, use the seaborn library (as well as matplotlib))
                     
-       rolling status - seeing things in perspective
-       
-       simple moving average
+Rolling average or moving average - seeing things in perspective via increasing the signal-to-noise ratio.. removes large quantity of data points, and causes the remaining data points to have much more information. (per investopedia). The moving average erases the 'noise' aspect of information by muffling the random, short-term fluctuations. Instead each moving average data point is itself a summary of a period of time, and so with other similar points, paints a much more useful picture of what is going on. See 'rolling statistics' exercise for review. 
+
+>     [] Simple moving average - mean of given set of prices over specific # days (15, 20, 30, 50, 100, 200)
+>     [] exponential moving averages (EMA) is weighted average thta gives greater importance to the price of a stock in more recent days, increasing the emphasis on recent activity.
+>     [] rising moving averages indicate uptrends, falling moving averages indicate downtrends. 
+>     [] moving averages are lagging (or trend-following) indicators because they are based on what happened in the past
+>     [] important 'trading signals' are the 50- day and 200- day moving averages, closely watched by investors and traders. 
+>     [] Investors tend to pay attention to moving averages focused on their time frame - so short-term traders look at shorter-time-frame based m.a., longer-horizon investors are more interested in m.a.'s based on longer time frames. 
+>     [] looking at short-term m.a.'s superimposed over longer-term m.a.'s generates insight into crossover trends. when a short-term moving average crosses above a longer-term moving average, that is a bullish crossover that confirms upward momentum. If the short-term moving average instead crosses below the longer-term moving average, that is a bearish crossover, which indicates downward momentum. 
+>     [] moving averages also provide basis for more complicated indicators, including the MACD
+>     [] MACD (moving average convergence divergence) is calculated by subtracting a 26-day exponential moving average from a 12-day exponential movign average. A result above 0 - positive - indicates a 'buy' decision; while a result below zero signals to sell 
+  
          
          beta -- risk metrics -- morgan stanley
          
