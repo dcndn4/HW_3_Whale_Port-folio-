@@ -77,3 +77,15 @@ Here is the "Returns analysis example" text:
         bell curve
         little greek o symbol
         is denominator for Sharpe Ratio
+        
+        std dev applied to stock (morningstar classroom)
+        
+        A fund with std dev of 4, and average return (or mean) of 10%:
+        most of the time (68%), the fund's future returns can be predicted to fall w/n 1 std dev of its historical average
+          that translated to its average of 10%, plus or minus 4% -- so within 6% and 14%
+        Nearly all the time (95%), the funds future returns should fall within 2 std dev's of mean:
+           translated, that is 10% plus/minus 8%, or between 2% and 18%. 
+           
+         std dev is only helpful within context (morningstar again) - since std dev is not relative measure, so has to have a context built around it.
+         That context generally comes from similar funds, (meaning funds with same defining features) and/or a relevant index. 
+         For a single stock, context would come from other stockss from similar companies (market sector, size etc.). 
