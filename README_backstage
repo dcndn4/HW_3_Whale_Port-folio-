@@ -18,7 +18,7 @@ Here is the "Returns analysis example" text:
 
       What insights could this provide in regards to wanting to trade AMD stock in the long-term vs. short-term?
 
-        The data shows that AMD had an average daily return over the last 1-year time frame of 0.004538, or 4.53%. This compares with long-term average daily returns of,         for example, 3.45% for a 3 year horizon, and 1.49% for a 10 year horizon. By contrasting the short-run (1 year) trend against the long run trend (10 years), it’s         apparent that AMD has had much stronger performance only recently.
+        The data shows that AMD had an average daily return over the last 1-year time frame of 0.004538, or 4.53%. This compares with long-term average daily returns of, for example, 3.45% for a 3 year horizon, and 1.49% for a 10 year horizon. By contrasting the short-run (1 year) trend against the long run trend (10 years), it’s         apparent that AMD has had much stronger performance only recently.
 
         As to what this foretells for an investor looking to buy AMD stock now, however, is less clear: it’s possible that this 1-year performance signals a dramatic             change in AMD’s business model, and that this strong performance will continue. On the other hand, the most recent year’s could just be an anomaly, and that              performance for AMD will revert to its long run trend.
 
@@ -29,3 +29,16 @@ Here is the "Returns analysis example" text:
         Returns over price changes -- returns are looked at instead of price changes because they are kind of boiled down to the informational nugget. Raw price itself can be very volatile, returns data moves over a much smaller range and each amount change is more meaningful.
         
         Possible explanations for the improved performance over the last year are discussed - and they are very different. Returns data alone is not sufficient by itself - it needs to be seen within the context of the overall market. 
+        
+        
+        ## Standard Deviation (std in pandas)
+        measures the distance between a set of values, and their center gravity basically (mathematically, by center gravity we mean average)
+        
+        Primary relationship between standard deviation (1 vs. 2 etc..) and risk/reward. 
+        
+        1 std dev may equate to being in the group of 70% of the total population of values
+        2 std dev for instance might be within 95% of total population of the group
+        3 std dev = 100% basically
+        bell curve
+        little greek o symbol
+        is denominator for Sharpe Ratio
