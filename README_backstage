@@ -32,7 +32,22 @@ Here is the "Returns analysis example" text:
         
         
         ## Standard Deviation (std in pandas)
-        measures the distance between a set of values, and their center gravity basically (mathematically, by center gravity we mean average)
+        measures the distance between a set of values, and their center gravity basically (mathematically, by center gravity we mean average) (class mtls)
+        
+        from investopedia: measures the dispersion of a dataset relative to its mean (i.e. average). It is calculated as the square root of variance: each data point's deviation from the mean. The greater that distance, the greater the standard deviation.
+        
+        benchmarks: 
+          volatile stocks have high standard deviation
+          'blue chip' stocks tend to have lower standard deviation
+          index funds are built in such a way as to have low std dev in relation to their benchmark index - intended to replicate the results of the index.
+          std dev is widely reported for any stock or investment instrument, by analysts, portfolio managers and advisors (and investors). 
+          
+         downside: 
+         the data that std dev is based on does not contain any info as to the reason for the deviation.. could be the company experiences positive growth. That would be variance from the mean, so std dev is higher, so risk/reward are higher.. Kind of circuitious.. when reward is higher, risk is assumed to also be higher. 
+         
+         std dev was explored using python prior to pandas section, as pandas has built-in formula. It's included in investopedia of course.. not explored further here. Input to the .std method in pandas is a DF with date-time column as index, and monetary values (close) as the one related column. (so is that a series? or a dataframe still?)
+         
+         
         
         Primary relationship between standard deviation (1 vs. 2 etc..) and risk/reward. 
         
