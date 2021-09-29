@@ -94,8 +94,21 @@ measures the distance between a set of values, and their center gravity basicall
          
          Other terms to become very familiar with:
          
-         correlation -- the higher the correlation, the less safety there is from market volatility
+ ## Correlation -- hard-bound - varies between -1 and + 1
+         
+The higher the correlation, the less safety there is from market volatility
                     with lower / negative  correlation, portfolio diversity is in place, which provides safety from market volatility
+
+Correlations:
+
+  >    [] +1 = perfect positive relationship
+
+>      []  0 = perfect random relationship
+
+>      [] -1 = prefect negative relationship
+
+                    
+(To work with correlation and pandas, use the seaborn library (as well as matplotlib))
                     
        rolling status - seeing things in perspective
        
