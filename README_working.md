@@ -90,3 +90,26 @@ measures the distance between a set of values, and their center gravity basicall
          std dev is only helpful within context (morningstar again) - since std dev is not relative measure, so has to have a context built around it.
          That context generally comes from similar funds, (meaning funds with same defining features) and/or a relevant index. 
          For a single stock, context would come from other stockss from similar companies (market sector, size etc.). 
+         
+         
+         Other terms to become very familiar with:
+         
+         correlation -- the higher the correlation, the less safety there is from market volatility
+                    with lower / negative  correlation, portfolio diversity is in place, which provides safety from market volatility
+                    
+       rolling status - seeing things in perspective
+       
+       simple moving average
+         
+         beta -- risk metrics -- morgan stanley
+         
+         Vix - volatility index -- for some investors, when Vix increases, they just sell some/all their risk-vulnerable holdings
+            Carol Alexander
+         
+         regarding beta vs. correlation -- capture the text in beta demo
+         
+         Harry Markowitz -- rooted in linear algebra, applied those theories to market diversification
+         
+         Out of that came the sharpe ratio.. CAPM etc.
+         
+         Pearson - default method
