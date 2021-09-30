@@ -121,9 +121,26 @@ Rolling average or moving average - seeing things in perspective via increasing 
 >     [] looking at short-term m.a.'s superimposed over longer-term m.a.'s generates insight into crossover trends. when a short-term moving average crosses above a longer-term moving average, that is a bullish crossover that confirms upward momentum. If the short-term moving average instead crosses below the longer-term moving average, that is a bearish crossover, which indicates downward momentum. 
 >     [] moving averages also provide basis for more complicated indicators, including the MACD
 >     [] MACD (moving average convergence divergence) is calculated by subtracting a 26-day exponential moving average from a 12-day exponential movign average. A result above 0 - positive - indicates a 'buy' decision; while a result below zero signals to sell 
+
+## Risk - Systematic Risk vs. Unsystematic risk
+
+Systematic risk is an adverse pressure that affects the entire stock market - such as the financial crisis in 2008. Even very well-diversified portfolios were harmed by that event. 
+
+Unsystematic risk or diversifiable risk is the uncertainty carried by a specific stock or fund or industry. That risk can be reduced via diversification. 
+
+### CAPM - Capital Asset Pricing Model
+
+CAPM attaches a numerical value to the risk and return of a specific financial instrument (usually a stock). { not an investment fund??}  
+
+One of the components of CAPM is Beta.
+
+### Beta - the specific volatility or systematic risk of a single stock, compared to the market as a whole
+
+Beta ({provided as a tool by Morgan Stanley?}) is about the performance of a stock in relation to the volatility of the market. It tells investors whether the stock moves with the market (does not provide diversification) or in a different way (does provide diversification). It quantifies the amount of movement as well. 
+
+Beta exists in a context provided by a benchmark (such as the s&p 500), and that benchmark needs to be relevant to that stock in order for the results to be useful. A numerical way to indicate the relevance of the benchmark to the stock is the R-squared value -- the higher that is, the more relevant the benchmark is. 
   
-         
-         beta -- risk metrics -- morgan stanley
+
          
          Vix - volatility index -- for some investors, when Vix increases, they just sell some/all their risk-vulnerable holdings
             Carol Alexander
