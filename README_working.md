@@ -108,26 +108,32 @@ Correlations:
 >      [] -1 = prefect negative relationship
 >      
 
-        Note on covariance: (from Beta demo presented in class 9.28.21)
+      
+Correlation is covariance, scaled to [-1, 1]. (~Carol Alexander, Practical Financial Econometrics, 94)(from Beta demo presented in class 9.28.21)
 
-        Covariance is a measure of dependency between two returns. Correlation is covariance, scaled to [-1, 1]. (~Carol Alexander, Practical Financial Econometrics, 94)
+### Covariance 
 
-        Or, it measures the directional relationship between two variables. If two stocks go up at the same time, covariance is positive!
+Covariance is a measure of dependency between two returns. Per Malkiel, it is the degree of parallelism between the returns of two securities. The calculation involves the actual and expected return of the two securities. Negative covariance means the two stocks move in opposite ways, they mitigate risk.
 
-        Note on variance:
-
-        Variance measures how far numbers disperse around their mean.
+Another way to put it is that covariance measures the directional relationship between two variables. If two stocks go up at the same time, covariance is positive!
         
-        Variance vs std dev is the square root of variance.
+Choosing stocks with negative covariance is the essence of diversification. (- A RW d MS p 194-196 or so).
 
-        Covariance vs variance: Variance is one variable. Covariance is 2 variables
+Comparison between terms 
 
+> [] Variance measures how far numbers disperse around their mean.
+        
+> [] Variance vs std dev is the square root of variance.
 
-
+> [] Covariance vs variance: Variance is one variable. Covariance is 2 variables
+        
+> [] (from Beta demo presented in class 9.28.21)
+              
+> [] Analysis note: To work with correlation and pandas, use the seaborn library (within matplotlib)
                     
-(To work with correlation and pandas, use the seaborn library (as well as matplotlib))
-                    
-Rolling average or moving average - seeing things in perspective via increasing the signal-to-noise ratio.. removes large quantity of data points, and causes the remaining data points to have much more information. (per investopedia). The moving average erases the 'noise' aspect of information by muffling the random, short-term fluctuations. Instead each moving average data point is itself a summary of a period of time, and so with other similar points, paints a much more useful picture of what is going on. See 'rolling statistics' exercise for review. 
+### Rolling average or moving average - 
+
+Rolling or moving average is a way to see things in perspective via increasing the signal-to-noise ratio.. removes large quantity of data points, and causes the remaining data points to have much more information. (per investopedia). The moving average erases the 'noise' aspect of information by muffling the random, short-term fluctuations. Instead each moving average data point is itself a summary of a period of time, and so with other similar points, paints a much more useful picture of what is going on. See 'rolling statistics' exercise for review. 
 
 >     [] Simple moving average - mean of given set of prices over specific # days (15, 20, 30, 50, 100, 200)
 >     [] exponential moving averages (EMA) is weighted average thta gives greater importance to the price of a stock in more recent days, increasing the emphasis on recent activity.
@@ -153,11 +159,18 @@ One of the components of CAPM is Beta.(per investopedia)
 
 ### Beta - the specific volatility or systematic risk of a single stock, compared to the market as a whole
 
-Beta ({provided as a tool by Morgan Stanley?}) is about the performance of a stock in relation to the volatility of the market. It tells investors whether the stock moves with the market (does not provide diversification) or in a different way (does provide diversification). It quantifies the amount of movement as well. (per investopedia)
+Beta is about the performance of a stock in relation to the volatility of the market. 
+
+high-beta stocks are 'aggressive' investments, low-beta stocks are defensive. (- A RW d MS). 
+
+A beta of 1 is assigned to a relevant market index. Then if a stock has a beta of 2, it loops out twice as far in every direction as the market index. If a stock has a beta of .5, it only moves half as far as the market. However it is crucial to carefully decide what to include in 'the market', as that determines the utility of beta as an investing tool. (- A RW d MS p 205-219). 
+
+(It tells investors whether the stock moves with the market (does not provide diversification) or in a different way (does provide diversification). It quantifies the amount of movement as well. (per investopedia)) -- putting this aside to see how this fits with add'l content
+(relationship between Beta and Morgan Stanley? not sure..)
 
 Beta exists in a context provided by a benchmark (such as the s&p 500), and that benchmark needs to be relevant to that stock in order for the results to be useful. A numerical way to indicate the relevance of the benchmark to the stock is the R-squared value -- the higher that is, the more relevant the benchmark is. (per investopedia)
 
-from Beta demo JL:
+
 
 
 Note on standard deviation:
