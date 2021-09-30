@@ -106,6 +106,23 @@ Correlations:
 >      []  0 = perfect random relationship
 
 >      [] -1 = prefect negative relationship
+>      
+
+        Note on covariance: (from Beta demo presented in class 9.28.21)
+
+        Covariance is a measure of dependency between two returns. Correlation is covariance, scaled to [-1, 1]. (~Carol Alexander, Practical Financial Econometrics, 94)
+
+        Or, it measures the directional relationship between two variables. If two stocks go up at the same time, covariance is positive!
+
+        Note on variance:
+
+        Variance measures how far numbers disperse around their mean.
+        
+        Variance vs std dev is the square root of variance.
+
+        Covariance vs variance: Variance is one variable. Covariance is 2 variables
+
+
 
                     
 (To work with correlation and pandas, use the seaborn library (as well as matplotlib))
@@ -130,22 +147,28 @@ Unsystematic risk or diversifiable risk is the uncertainty carried by a specific
 
 ### CAPM - Capital Asset Pricing Model
 
-CAPM attaches a numerical value to the risk and return of a specific financial instrument (usually a stock). { not an investment fund??}  
+CAPM attaches a numerical value to the risk and return of a specific financial instrument (usually a stock). { not an investment fund??}  (per investopedia)
 
-One of the components of CAPM is Beta.
+One of the components of CAPM is Beta.(per investopedia)
 
 ### Beta - the specific volatility or systematic risk of a single stock, compared to the market as a whole
 
-Beta ({provided as a tool by Morgan Stanley?}) is about the performance of a stock in relation to the volatility of the market. It tells investors whether the stock moves with the market (does not provide diversification) or in a different way (does provide diversification). It quantifies the amount of movement as well. 
+Beta ({provided as a tool by Morgan Stanley?}) is about the performance of a stock in relation to the volatility of the market. It tells investors whether the stock moves with the market (does not provide diversification) or in a different way (does provide diversification). It quantifies the amount of movement as well. (per investopedia)
 
-Beta exists in a context provided by a benchmark (such as the s&p 500), and that benchmark needs to be relevant to that stock in order for the results to be useful. A numerical way to indicate the relevance of the benchmark to the stock is the R-squared value -- the higher that is, the more relevant the benchmark is. 
-  
+Beta exists in a context provided by a benchmark (such as the s&p 500), and that benchmark needs to be relevant to that stock in order for the results to be useful. A numerical way to indicate the relevance of the benchmark to the stock is the R-squared value -- the higher that is, the more relevant the benchmark is. (per investopedia)
 
+from Beta demo JL:
+
+
+Note on standard deviation:
+
+      An asset's volatility is "an annualized measure of dispersion in the stochastic process that is used to model the log returns." Most commonly modeled using           standard deviation (sigma). (~Carol Alexander, Practical Financial Econometrics, 90)
+
+      Volatility could also be described as how much the returns jump around over time. Another tool used for perspective on this is Vix.
+### Vix 
+    Vix is a volatility index. 
          
-         Vix - volatility index -- for some investors, when Vix increases, they just sell some/all their risk-vulnerable holdings
-            Carol Alexander
-         
-         regarding beta vs. correlation -- capture the text in beta demo
+       
          
          Harry Markowitz -- rooted in linear algebra, applied those theories to market diversification
          
