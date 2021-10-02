@@ -37,7 +37,21 @@ measures the distance between a set of values, and their center gravity basicall
 >   from investopedia: measures the dispersion of a dataset relative to its mean (i.e. average). It is calculated as the square root of variance: each data point's deviation from the mean. The greater that distance, the greater the standard deviation. 
         
 >   Variance itself is an ingredient within standard deviation.. is usually not part of the analysis itself because it doesn't graph out in a way that is helpful (investopedia). Also, variance may end up being in a different unit of measurement than the data itself, which adds to the confusion.
-        
+
+### Example (David M. Lane website)
+
+                    Stock A                    Stock B
+  | :-----:|:-------:| :--------:  | :-----:| :-------:| :---------:|
+  | Value  |Return % |Final Value | Value | Return % | Final Value |
+  | :-----:|:-------:| :--------:  | :-----:| :-------:| :---------:|
+  |  1,000 |   .75   |   1,008     |  1,000 |   1.50  |   1,015     |
+   | :-----:|:-------:| :--------:  | :-----:| :-------:| :---------:|
+  |  1,008 |  1.00   |   1,018     |  1,015 |  5.00   |   1,066     |
+  | :-----:|:-------:| :--------:  | :-----:| :-------:| :---------:|
+  |  1,018    3.00   |   1,048     |  1,066   12.00   |   1,194     |
+ 
+    
+    
   ### Benchmarks for standard deviation: 
   > Volatile stocks have high standard deviation
   
