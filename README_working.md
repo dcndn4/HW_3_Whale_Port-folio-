@@ -8,35 +8,35 @@ So to make the most progress possible, I'm going to write out my process in this
 
 Here is the "Returns analysis example" text:
 
-    Example - returns analysis (3.2 exercise)
+> Example - returns analysis (3.2 exercise)
 
-    What are the average daily returns over each date range?
-          1 Year = 0.04538 or 4.53%
-          3 Year = 0.03455 or 3.45%
-          5 Year = 0.02304 or 2.30%
-          10 Year = 0.01488 or 1.49%
+> What are the average daily returns over each date range?
+> 
+>   []  1 Year = 0.04538 or 4.53%
+>   []  3 Year = 0.03455 or 3.45%
+>   []  5 Year = 0.02304 or 2.30%
+>   []  10 Year = 0.01488 or 1.49%
 
-    What insights could this provide in regards to wanting to trade AMD stock in the long-term vs. short-term?
+>   What insights could this provide in regards to wanting to trade AMD stock in the long-term vs. short-term?
 
-        The data shows that AMD had an average daily return over the last 1-year time frame of 0.004538, or 4.53%. This compares with long-term average daily returns of, for example, 3.45% for a 3 year horizon, and 1.49% for a 10 year horizon. By contrasting the short-run (1 year) trend against the long run trend (10 years), it’s apparent that AMD has had much stronger performance only recently.
+>   The data shows that AMD had an average daily return over the last 1-year time frame of 0.004538, or 4.53%. This compares with long-term average daily returns of, for example, 3.45% for a 3 year horizon, and 1.49% for a 10 year horizon. By contrasting the short-run (1 year) trend against the long run trend (10 years), it’s apparent that AMD has had much stronger performance only recently.
 
-        As to what this foretells for an investor looking to buy AMD stock now, however, is less clear: it’s possible that this 1-year performance signals a dramatic             change in AMD’s business model, and that this strong performance will continue. On the other hand, the most recent year’s could just be an anomaly, and that performance for AMD will revert to its long run trend.
+>   As to what this foretells for an investor looking to buy AMD stock now, however, is less clear: it’s possible that this 1-year performance signals a dramatic    change in AMD’s business model, and that this strong performance will continue. On the other hand, the most recent year’s could just be an anomaly, and that performance for AMD will revert to its long run trend.
 
-         A third and entirely alternative explanation is that the equity market overall experienced a boom over this last year, and that AMD—like all stocks in the    market—rose in value. In the next unit, you will learn how to adjust for these market effects, so that you can evaluate stock performance from year-to-year on a more even measure.
+>   A third and entirely alternative explanation is that the equity market overall experienced a boom over this last year, and that AMD—like all stocks in the    market—rose in value. In the next unit, you will learn how to adjust for these market effects, so that you can evaluate stock performance from year-to-year on a more even measure.
   
-  And so deconstructing those concepts:
+>   And so deconstructing those concepts:
   
- Returns over price changes -- returns are looked at instead of price changes because they are kind of boiled down to the informational nugget. Raw price itself can be very volatile, returns data moves over a much smaller range and each amount change is more meaningful.
+>   Returns over price changes -- returns are looked at instead of price changes because they are kind of boiled down to the informational nugget. Raw price itself can be very volatile, returns data moves over a much smaller range and each amount change is more meaningful.
         
-Possible explanations for the improved performance over the last year are discussed - and they are very different. Returns data alone is not sufficient by itself - it needs to be seen within the context of the overall market. 
+>   Possible explanations for the improved performance over the last year are discussed - and they are very different. Returns data alone is not sufficient by itself - it needs to be seen within the context of the overall market. 
         
 ## Standard Deviation (std in pandas)
 measures the distance between a set of values, and their center gravity basically (mathematically, by center gravity we mean average) (class mtls)
         
-    from investopedia: measures the dispersion of a dataset relative to its mean (i.e. average). It is calculated as the square root of variance: each data point's deviation from the mean. The greater that distance, the greater the standard deviation. 
+>   from investopedia: measures the dispersion of a dataset relative to its mean (i.e. average). It is calculated as the square root of variance: each data point's deviation from the mean. The greater that distance, the greater the standard deviation. 
         
-        Variance itself is an ingredient within standard deviation.. is usually not part of the analysis itself because it doesn't graph out in a way that is helpful 
-        (investopedia). Also, variance may end up being in a different unit of measurement than the data itself, which adds to the confusion.
+>   Variance itself is an ingredient within standard deviation.. is usually not part of the analysis itself because it doesn't graph out in a way that is helpful (investopedia). Also, variance may end up being in a different unit of measurement than the data itself, which adds to the confusion.
         
   ### benchmarks for std dev: 
   > volatile stocks have high standard deviation
