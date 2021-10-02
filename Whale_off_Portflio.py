@@ -22,7 +22,18 @@ csv_path_w = "C:/Users/CS_Knit_tinK_SC/Documents/My Data Sources/Whale/whale_ret
 whale_returns = pd.read_csv(
     csv_path_w, parse_dates=True, index_col="Date", infer_datetime_format=True
 )
+
+# whale df is 1060/4
 print(whale_returns.head())
+#%%
+
+# Count nulls
+print(whale_returns.isnull().mean() * 100)
+
+#%%
+
+whale_returns=whale_returns.dropna()
+
 
 #%%
 
@@ -32,7 +43,18 @@ csv_path_a = "C:/Users/CS_Knit_tinK_SC/Documents/My Data Sources/Whale/algo_retu
 algo_returns = pd.read_csv(
     csv_path_a, parse_dates=True, index_col="Date", infer_datetime_format=True
 )
+
+# algo df is 1241/2
 print(algo_returns.head())
+
+#%%
+
+# Count nulls
+print(algo_returns.isnull().mean() * 100)
+
+#%%
+
+algo_returns=algo_returns.dropna()
 
 #%%
 
@@ -43,6 +65,8 @@ csv_path_s = "C:/Users/CS_Knit_tinK_SC/Documents/My Data Sources/Whale/sp500_his
 #csv_path_s, parse_dates=True, index_col="Date", infer_datetime_format=True
 #)
 sp500_history = pd.read_csv(csv_path_s)
+
+# sp500 is 1649/2
 print(sp500_history.head())
 
 #%%
@@ -64,6 +88,28 @@ print(sp500_history.head())
 # Drop the extra date column
 sp500_history.drop(columns=['Date'], inplace=True)
 print(sp500_history.head())
+print(sp500_history.dtypes)
+#%%
+
+sp500_history=sp500_history.dropna()
 
 #%%
 
+sp500_history['Close'] = sp500_history['Close'].str.replace('$','')
+
+#%%
+
+sp500_history['Close']=sp500_history['Close'].astype('float')
+
+#%%
+
+sp500_returns = sp500_history.pct_change()
+
+#%%
+
+sp500_returns.columns = ["SP500"] 
+
+#%%
+
+all_returns = pd.concat([algo_returns, whale_returns, sp500_returns], axis='columns', join = 'inner')
+                         
