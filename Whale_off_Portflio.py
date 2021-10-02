@@ -112,4 +112,23 @@ sp500_returns.columns = ["SP500"]
 #%%
 
 all_returns = pd.concat([algo_returns, whale_returns, sp500_returns], axis='columns', join = 'inner')
-                         
+
+#%%
+
+# Plot daily returns of all portfolios
+algo_returns.plot()
+whale_returns.plot()
+sp500_returns.plot()
+
+#%%
+
+cumulative_algo_returns = (1 + algo_returns).cumprod() - 1
+cumulative_whale_returns = (1 + whale_returns).cumprod() - 1
+cumulative_sp500_returns = (1 + sp500_returns).cumprod() - 1
+
+#%%
+
+cumulative_algo_returns.plot()
+cumulative_whale_returns.plot()
+cumulative_sp500_returns.plot()
+
