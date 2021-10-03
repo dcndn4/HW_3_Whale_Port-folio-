@@ -132,3 +132,8 @@ cumulative_algo_returns.plot()
 cumulative_whale_returns.plot()
 cumulative_sp500_returns.plot()
 
+#%%
+
+all_returns.plot.box()
+
+

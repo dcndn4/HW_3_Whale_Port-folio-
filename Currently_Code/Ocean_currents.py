@@ -24,3 +24,7 @@ portfolio_std = pd.DataFrame({
 portfolio_std.plot.hist(stacked=True, bins=100)
 
 #%%
+# Plot box plot
+portfolio_std.plot.box()
+
+#%%
