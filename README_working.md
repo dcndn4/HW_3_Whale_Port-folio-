@@ -6,6 +6,10 @@ And in life.
 
 So to make the most progress possible, I'm going to write out my process in this space - exploring the topics, putting the info together in my own way. 
 
+This assignment is all about quantitative analysis = presenting reality in terms of a numerical value.
+
+The first step in the process is to look at portfolio returns over time. Returns are the change in ending value from one day to the next, or one week or month to the next. It is compared to a benchmark for that sector or type of instrument. 
+
 Here is the "Returns analysis example" text:
 
 > Example - returns analysis (3.2 exercise)
@@ -30,6 +34,8 @@ Here is the "Returns analysis example" text:
 >   Returns over price changes -- returns are looked at instead of price changes because they are kind of boiled down to the informational nugget. Raw price itself can be very volatile, returns data moves over a much smaller range and each amount change is more meaningful.
         
 >   Possible explanations for the improved performance over the last year are discussed - and they are very different. Returns data alone is not sufficient by itself - it needs to be seen within the context of the overall market. 
+
+### Boiled down, returns are a pure numerical value about the benefits received from owning a certain stock or portfolio. It doesn't include any contextual information at all, it's simply a statement about the results achieved by that specific investment. 
         
 ## Standard Deviation (std in pandas)
 
