@@ -35,7 +35,7 @@ Here is the "Returns analysis example" text:
         
 >   Possible explanations for the improved performance over the last year are discussed - and they are very different. Returns data alone is not sufficient by itself - it needs to be seen within the context of the overall market. 
 
-### Boiled down, returns are a pure numerical value about the benefits received from owning a certain stock or portfolio. It doesn't include any contextual information at all, it's simply a statement about the results achieved by that specific investment. 
+### Boiled down, returns are a pure numerical value about the benefits received from owning a certain stock or portfolio. Although not cash benefits, since investors don't sell every day.. it is the unrealized gains/losses over time. It doesn't include any contextual information at all, it's simply a statement about the results achieved by that specific investment. 
         
 ## Standard Deviation (std in pandas)
 
@@ -63,13 +63,17 @@ Standard deviation is a parametric statistical measure (wikipedia), meaning it d
   
        (David M. Lane website)[davidmlane.com/yhyperstat/A40397.html]
        
-This example shows the utility of standard deviation. Although both portfolios started at $ 1,000 and ended at $ 1,058, the volatility of the two was very different. Portfolio A has returns ranging from -1.5% to 3%, while Portfolio B's returns ranged from -9% to 12%. So that range of volatility for B is a much larger range than for A - the distance between the highest and lowest returns amounts. While that range amount is dramatic, a more useful way to look at volatility is standard deviation, because it takes into account all the values during the period, and incorporates that info into a statistic. 
+This example shows the utility of standard deviation. 
+
+Although both portfolios started at $ 1,000 and ended at $ 1,058, the volatility of the two was very different. Volatility could be described as how much the returns jump around over time.
+
+Portfolio A has returns ranging from -1.5% to 3%, while Portfolio B's returns ranged from -9% to 12%. So that range of volatility for B is a much larger range than for A - the distance between the highest and lowest returns amounts. While that range amount is dramatic, a more useful way to look at volatility is standard deviation, because it takes into account all the values during the period, and incorporates that info into a statistic. 
 
 The standard deviation for portfolio A is 1.52, while for portfolio B it is 7.24. 
 
+Variance itself is an ingredient within standard deviation.. is usually not part of the analysis itself because it doesn't graph out in a way that is helpful (investopedia). Also, variance may end up being in a different unit of measurement than the data itself, which adds to the confusion.
 
-  
-  >   Variance itself is an ingredient within standard deviation.. is usually not part of the analysis itself because it doesn't graph out in a way that is helpful (investopedia). Also, variance may end up being in a different unit of measurement than the data itself, which adds to the confusion.
+An asset's volatility is "an annualized measure of dispersion in the stochastic process that is used to model the log returns." Most commonly modeled using          standard deviation (sigma). (~Carol Alexander, Practical Financial Econometrics, 90)
     
   ### Benchmarks for standard deviation: 
   > Volatile stocks have high standard deviation
@@ -97,7 +101,7 @@ Standard deviation was explored using python prior to pandas section, as pandas 
                 
 ## Primary relationship between standard deviation (1 vs. 2 etc..) and risk/reward. 
         
->   []   1 std dev may equate to being in the group of 70% of the total population of values
+>   []  1 std dev may equate to being in the group of 70% of the total population of values
 >   []  2 std dev for instance might be within 95% of total population of the group
 >   []  3 std dev = 100% basically
 >   []  bell curve
@@ -115,26 +119,14 @@ A fund with std dev of 4, and average return (or mean) of 10%:
            
 Standard dev is only helpful within context (morningstar again) - since standard deviation is not relative measure, so has to have a context built around it. That context generally comes from similar funds, (meaning funds with same defining features) and/or a relevant index. For a single stock, context would come from other stocks from similar companies (market sector, size etc.). 
 
+Standard deviation is anchored in the past, and it's only useful regarding the future is the assumption is made that the past will be repeated. It is also called 'realized volatility' or 'historical votality (HV)', since it's based on past data.
+
+The other way of predicting future volatility that isn't based on past results (like standard deviation), but is based on option prices. Publicly-known option prices carry information about investor expectations for prices in the future, based on expected volatility. That volatility when  distilled out from those assumptions (for a particular stock or fund) is called forward-looking "implied volatility(IV)". 
+
 Standard deviation doesn't speak to returns directly.. so a small standard deviation in an area with low profitability with have lower returns that a portfolio with that same standard deviation in a sector with high profitability. Context is everything.
-         
-         
-# Related Terms
-         
-## Correlation -- hard-bound - varies between -1 and + 1
-         
-The higher the correlation, the less safety there is from market volatility
-* with lower / negative  correlation, portfolio diversity is in place, which provides safety from market volatility
 
-Correlations:
->      [] +1 = perfect positive relationship
-
->      []  0 = perfect random relationship
-
->      [] -1 = prefect negative relationship
->      
-
-      
-Correlation is covariance, scaled to [-1, 1]. (~Carol Alexander, Practical Financial Econometrics, 94)(from Beta demo presented in class 9.28.21)
+### Vix 
+Vix is a volatility index. It's full name is the Cboe Volatility Index, abbreviated to VIX. It was created in 1993 by the Chicago Board Options Exchange (CBOE) and is maintained by Cboe global markets. It generates a 30-day forward projection of future volatility. It is constructed from the implied (future) volatilities of the S&P 500 - considered the leading indicator of the overall US Stock Market. Historical data demonstrates a strong negative correlation between volatility and stock market returns - when volatility rises, returns go down (and vice versa). (Investopedia).
 
 ### Covariance 
 
@@ -150,11 +142,29 @@ Comparison between terms
         
 > [] Variance vs std dev: standard deviation is the square root of variance.
 
-> [] Covariance vs variance: Variance is one variable. Covariance is 2 variables
+> [] Covariance vs variance: Variance is one variable (one stock or fund). Covariance is about the relationship between 2 variables (stocks or funds).
+
+> [] Covariance is mainly a stepping stone to calculating correlation, it isn't really useful itself. 
         
 > [] (from Beta demo presented in class 9.28.21)
               
 > [] Analysis note: To work with correlation and pandas, use the seaborn library (within matplotlib)
+               
+### Correlation -- hard-bound - varies between -1 and + 1
+         
+The higher the correlation, the less safety there is from market volatility
+* with lower / negative  correlation, portfolio diversity is in place, which provides safety from market volatility
+
+Correlations:
+>      [] +1 = perfect positive relationship
+
+>      []  0 = perfect random relationship
+
+>      [] -1 = prefect negative relationship
+>      
+
+Correlation is covariance, scaled to [-1, 1]. (~Carol Alexander, Practical Financial Econometrics, 94)(from Beta demo presented in class 9.28.21)
+
                     
 ### Rolling average or moving average - 
 
@@ -198,14 +208,7 @@ Beta exists in a context provided by a benchmark (such as the s&p 500), and that
 
 
 
-Note on standard deviation:
 
-An asset's volatility is "an annualized measure of dispersion in the stochastic process that is used to model the log returns." Most commonly modeled using           standard deviation (sigma). (~Carol Alexander, Practical Financial Econometrics, 90)
-
-Volatility could also be described as how much the returns jump around over time. Another tool used for perspective on this is Vix.
-
-### Vix 
-Vix is a volatility index. 
  
 Other related etc:
 Harry Markowitz -- rooted in linear algebra, applied those theories to market diversification.. Out of that came the sharpe ratio.. CAPM etc... Pearson - default method..
