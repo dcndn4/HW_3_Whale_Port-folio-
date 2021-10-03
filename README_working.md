@@ -117,13 +117,35 @@ A fund with std dev of 4, and average return (or mean) of 10%:
 * Nearly all the time (95%), the funds future returns should fall within 2 std dev's of mean:
 * translated, that is 10% plus/minus 8%, or between 2% and 18%. 
            
-Standard dev is only helpful within context (morningstar again) - since standard deviation is not relative measure, so has to have a context built around it. That context generally comes from similar funds, (meaning funds with same defining features) and/or a relevant index. For a single stock, context would come from other stocks from similar companies (market sector, size etc.). 
+Standard dev is only helpful within context (morningstar again) - since standard deviation is not relative measure, so has to have a context built around it. That context generally comes from similar funds, (meaning funds with same defining features) and/or a relevant index. For a single stock, context would come from other stocks from similar companies (market sector, size etc). 
+
+### Rolling average or moving average - 
+
+Rolling or moving average is a way to see things in perspective via increasing the signal-to-noise ratio.. removes large quantity of data points, and causes the remaining data points to have much more information. (per investopedia). The moving average erases the 'noise' aspect of information by muffling the random, short-term fluctuations. Instead each moving average data point is itself a summary of a period of time, and so with other similar points, paints a much more useful picture of what is going on. See 'rolling statistics' exercise for review. 
+
+> * Simple moving average - mean of given set of prices over specific # days (15, 20, 30, 50, 100, 200)
+> * exponential moving averages (EMA) is weighted average thta gives greater importance to the price of a stock in more recent days, increasing the emphasis on recent activity.
+> * rising moving averages indicate uptrends, falling moving averages indicate downtrends. 
+> * moving averages are lagging (or trend-following) indicators because they are based on what happened in the past
+> * important 'trading signals' are the 50- day and 200- day moving averages, closely watched by investors and traders. 
+> * Investors tend to pay attention to moving averages focused on their time frame - so short-term traders look at shorter-time-frame based m.a., longer-horizon investors are more interested in m.a.'s based on longer time frames. 
+> * looking at short-term m.a.'s superimposed over longer-term m.a.'s generates insight into crossover trends. when a short-term moving average crosses above a longer-term moving average, that is a bullish crossover that confirms upward momentum. If the short-term moving average instead crosses below the longer-term moving average, that is a bearish crossover, which indicates downward momentum. 
+> * moving averages also provide basis for more complicated indicators, including the MACD
+> * MACD (moving average convergence divergence) is calculated by subtracting a 26-day exponential moving average from a 12-day exponential movign average. A result above 0 - positive - indicates a 'buy' decision; while a result below zero signals to sell 
+
+### Rolling Standard Deviation
+
+Rather than look at a single standard deviation value for a stock, the rolling std dev is a graphical display of the cumulative std dev. For each point in the y axis (usually time), the rolling std dev is a value between 0 and 1 that reflects the std dev over a period of time prior to that point. The period of time (or window) in each case is provided. Common windows are 14 days or 20 days etc. The graph provides a boiled-down essence of the volatility of the stock or fund. 
+
+### Application of Standard Deviation
 
 Standard deviation is anchored in the past, and it's only useful regarding the future is the assumption is made that the past will be repeated. It is also called 'realized volatility' or 'historical votality (HV)', since it's based on past data.
 
 The other way of predicting future volatility that isn't based on past results (like standard deviation), but is based on option prices. Publicly-known option prices carry information about investor expectations for prices in the future, based on expected volatility. That volatility when  distilled out from those assumptions (for a particular stock or fund) is called forward-looking "implied volatility(IV)". 
 
 Standard deviation doesn't speak to returns directly.. so a small standard deviation in an area with low profitability with have lower returns that a portfolio with that same standard deviation in a sector with high profitability. Context is everything.
+
+
 
 ### Vix 
 Vix is a volatility index. It's full name is the Cboe Volatility Index, abbreviated to VIX. It was created in 1993 by the Chicago Board Options Exchange (CBOE) and is maintained by Cboe global markets. It generates a 30-day forward projection of future volatility. It is constructed from the implied (future) volatilities of the S&P 500 - considered the leading indicator of the overall US Stock Market. Historical data demonstrates a strong negative correlation between volatility and stock market returns - when volatility rises, returns go down (and vice versa). (Investopedia).
@@ -164,22 +186,7 @@ Correlations:
 >      
 
 Correlation is covariance, scaled to [-1, 1]. (~Carol Alexander, Practical Financial Econometrics, 94)(from Beta demo presented in class 9.28.21)
-
-                    
-### Rolling average or moving average - 
-
-Rolling or moving average is a way to see things in perspective via increasing the signal-to-noise ratio.. removes large quantity of data points, and causes the remaining data points to have much more information. (per investopedia). The moving average erases the 'noise' aspect of information by muffling the random, short-term fluctuations. Instead each moving average data point is itself a summary of a period of time, and so with other similar points, paints a much more useful picture of what is going on. See 'rolling statistics' exercise for review. 
-
->     [] Simple moving average - mean of given set of prices over specific # days (15, 20, 30, 50, 100, 200)
->     [] exponential moving averages (EMA) is weighted average thta gives greater importance to the price of a stock in more recent days, increasing the emphasis on recent activity.
->     [] rising moving averages indicate uptrends, falling moving averages indicate downtrends. 
->     [] moving averages are lagging (or trend-following) indicators because they are based on what happened in the past
->     [] important 'trading signals' are the 50- day and 200- day moving averages, closely watched by investors and traders. 
->     [] Investors tend to pay attention to moving averages focused on their time frame - so short-term traders look at shorter-time-frame based m.a., longer-horizon investors are more interested in m.a.'s based on longer time frames. 
->     [] looking at short-term m.a.'s superimposed over longer-term m.a.'s generates insight into crossover trends. when a short-term moving average crosses above a longer-term moving average, that is a bullish crossover that confirms upward momentum. If the short-term moving average instead crosses below the longer-term moving average, that is a bearish crossover, which indicates downward momentum. 
->     [] moving averages also provide basis for more complicated indicators, including the MACD
->     [] MACD (moving average convergence divergence) is calculated by subtracting a 26-day exponential moving average from a 12-day exponential movign average. A result above 0 - positive - indicates a 'buy' decision; while a result below zero signals to sell 
-
+                   
 ## Risk - Systematic Risk vs. Unsystematic risk
 
 Systematic risk is an adverse pressure that affects the entire stock market - such as the financial crisis in 2008. Even very well-diversified portfolios were harmed by that event. 
