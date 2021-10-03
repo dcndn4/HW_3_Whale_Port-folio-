@@ -80,26 +80,29 @@ print(sp500_history.dtypes)
 
 #sp500_history.set_index(sp500_history['Date'], inplace=True)
 #print(sp500_history.head())
-
 sp500_history.set_index(pd.to_datetime(sp500_history['Date'], infer_datetime_format=True), inplace=True)
+sp500_history.sort_index(inplace=True)
 print(sp500_history.head())
+
+
+#%%
+
+# Fix Data Types
+
+
+sp500_history['Close'] = sp500_history['Close'].str.replace('$','')
+sp500_history['Close']=sp500_history['Close'].astype('float')
+
 
 #%%
 # Drop the extra date column
 sp500_history.drop(columns=['Date'], inplace=True)
 print(sp500_history.head())
 print(sp500_history.dtypes)
+
 #%%
 
 sp500_history=sp500_history.dropna()
-
-#%%
-
-sp500_history['Close'] = sp500_history['Close'].str.replace('$','')
-
-#%%
-
-sp500_history['Close']=sp500_history['Close'].astype('float')
 
 #%%
 
@@ -136,4 +139,86 @@ cumulative_sp500_returns.plot()
 
 all_returns.plot.box()
 
+#%%
+daily_std = all_returns.std()
+print(f' Daily Standard Returns are: \n{daily_std}')
 
+#%%
+
+# Calculate  the daily standard deviation of S&P 500
+
+print(f' The daily Standard Returns are: \n{daily_std}')
+
+# Calculate  the daily standard deviation of S&P 500
+
+daily_std = daily_std.sort_values(ascending=False)
+
+
+
+# Determine which portfolios are riskier than the S&P 500
+# do for loop, identify items in riskier file??
+#%%
+
+# Calculate the annualized standard deviation (252 trading days)
+annualized_std = daily_std * np.sqrt(252)
+annualized_std = annualized_std.sort_values(ascending=False)
+print(annualized_std)
+
+#%%
+
+#Rolling Statistics
+
+#Risk changes over time. Analyze the rolling statistics for Risk and Beta.
+
+#Calculate and plot the rolling standard deviation for all portfolios
+# using a 21-day window
+#Calculate the correlation between each stock to determine which 
+#portfolios may mimic the S&P 500
+#Choose one portfolio, then calculate and plot the 60-day rolling beta
+# between it and the S&P 500
+
+
+
+#%%
+
+# Calculate and plot rolling std for all portfolios with 21-day window
+
+# Calculate the rolling standard deviation for all portfolios using a 21-day window
+
+
+#all_returns.rolling(window=21).std()   
+
+# Plot the rolling standard deviation
+#all_returns.rolling(window=21).std().plot
+
+algo_returns.rolling(window=21).std().plot()
+whale_returns.rolling(window=21).std().plot()
+sp500_returns.rolling(window=21).std().plot()
+#%%
+
+# Calculate the correlation
+correlation = all_returns.corr()
+# Display the correlation matrix
+print(correlation)
+correlation.plot()
+
+#%%
+
+# Calculate covariance of a single portfolio
+covariance = all_returns['Algo 1'].cov(all_returns['SP500'])
+
+# Calculate variance of S&P 500
+variance = all_returns['SP500'].var()
+
+# Computing beta
+Algo1_beta = covariance/variance
+
+#%%
+
+# Plot beta trend
+rolling_Algo1_covariance = all_returns['Algo 1'].rolling(window=30).cov(all_returns['SP500'])
+rolling_variance = all_returns['SP500'].rolling(window=30).var()
+rolling_Algo1_beta = rolling_Algo1_covariance / rolling_variance
+ax = rolling_Algo1_beta.plot(figsize=(20, 10), title='Rolling 30-Day Beta of Algo 1')
+
+#%%
