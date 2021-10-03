@@ -222,3 +222,17 @@ rolling_Algo1_beta = rolling_Algo1_covariance / rolling_variance
 ax = rolling_Algo1_beta.plot(figsize=(20, 10), title='Rolling 30-Day Beta of Algo 1')
 
 #%%
+
+#Rolling Statistics Challenge: Exponentially Weighted Average
+
+#An alternative way to calculate a rolling window is to take the exponentially weighted moving average.
+# This is like a moving window average, 
+#but it assigns greater importance to more recent observations. 
+#Try calculating the ewm with a 21-day half-life.
+
+# Use `ewm` to calculate the rolling window
+
+# no luck so far!
+
+#%%
+
