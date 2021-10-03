@@ -50,7 +50,7 @@ Standard deviation is a parametric statistical measure (wikipedia), meaning it d
 ### Standard Deviation Example 
 
 
-  |                 Stock A        |            Stock B             |
+  |                 Portfolio A        |            Portfolio B             |
 
   | Value  |Return % |Final Value | Value | Return % | Final Value |
   | :-----:|:-------:| :--------:  | :-----:| :-------:| :---------:|
@@ -61,7 +61,13 @@ Standard deviation is a parametric statistical measure (wikipedia), meaning it d
   |  1,032 |   .50   |   1,038     |  1,086 |  -4.00   |   1,043   |
   |  1,038 |  2.00   |   1,058     |  1,043 |   1.50   |   1,058   |
   
-       (David M. Lane website)
+       (David M. Lane website)[davidmlane.com/yhyperstat/A40397.html]
+       
+This example shows the utility of standard deviation. Although both portfolios started at $ 1,000 and ended at $ 1,058, the volatility of the two was very different. Portfolio A has returns ranging from -1.5% to 3%, while Portfolio B's returns ranged from -9% to 12%. So that range of volatility for B is a much larger range than for A - the distance between the highest and lowest returns amounts. While that range amount is dramatic, a more useful way to look at volatility is standard deviation, because it takes into account all the values during the period, and incorporates that info into a statistic. 
+
+The standard deviation for portfolio A is 1.52, while for portfolio B it is 7.24. 
+
+
   
   >   Variance itself is an ingredient within standard deviation.. is usually not part of the analysis itself because it doesn't graph out in a way that is helpful (investopedia). Also, variance may end up being in a different unit of measurement than the data itself, which adds to the confusion.
     
@@ -70,7 +76,7 @@ Standard deviation is a parametric statistical measure (wikipedia), meaning it d
   
   > 'Blue chip' stocks tend to have lower standard deviation
   
-  > Index funds are built in such a way as to have low volatility (std dev) in relation to their benchmark index - intended to replicate the results of the index.
+  > Index funds are built in such a way as to have low volatility (lower standard deviation) in relation to their benchmark index - intended to replicate the results of the index.
   
   > Standard deviation (std dev) is widely reported for any stock or investment instrument, by analysts, portfolio managers and advisors (and investors). 
   
@@ -85,7 +91,7 @@ normal curve - then 68% of results fall w/n 1 std dev, or mean, data point.
 shape with more volatility - fewer than 68% are within the 1 std dev, and more of the data points are outside of those bounds. 
           
 ### Standard deviation downside: 
-The data that std dev is based on does not contain any info as to the reason for the deviation.. could be the company experiences positive growth. That would be variance from the mean, so std dev is higher, so risk/reward are higher.. Kind of circuitious.. when reward is higher, risk is assumed to also be higher. Outliers and extreme values skew the shape of the curve, and may reduce the informational value of this calculation. When there are outliers, the normal distribution isn't applicable, but there isn't a different model to use instead basically, so talking about the results is more difficult. Past results don't predict the future, of course.
+Standard deviation analysis doesn't supply a reason for the deviation.. could be the company experiences positive growth. That would be variance from the mean, so std dev is higher, so risk/reward are higher.. Kind of circuitious.. when reward is higher, risk is assumed to also be higher. Outliers and extreme values skew the shape of the curve, and may reduce the informational value of this calculation. When there are outliers, the normal distribution isn't applicable, but there isn't a different model to use instead basically, so talking about the results is more difficult. Past results don't predict the future, of course.
          
 Standard deviation was explored using python prior to pandas section, as pandas has built-in formula. It's included in investopedia of course.. not explored further here. Input to the .std method in pandas is a DF with date-time column as index, and monetary values (close) as the one related column. (so is that a series? or a dataframe still?)
                 
@@ -108,6 +114,8 @@ A fund with std dev of 4, and average return (or mean) of 10%:
 * translated, that is 10% plus/minus 8%, or between 2% and 18%. 
            
 Standard dev is only helpful within context (morningstar again) - since standard deviation is not relative measure, so has to have a context built around it. That context generally comes from similar funds, (meaning funds with same defining features) and/or a relevant index. For a single stock, context would come from other stocks from similar companies (market sector, size etc.). 
+
+Standard deviation doesn't speak to returns directly.. so a small standard deviation in an area with low profitability with have lower returns that a portfolio with that same standard deviation in a sector with high profitability. Context is everything.
          
          
 # Related Terms
