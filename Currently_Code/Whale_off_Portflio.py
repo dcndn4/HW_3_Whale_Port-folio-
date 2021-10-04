@@ -45,6 +45,7 @@ algo_returns = pd.read_csv(
 )
 
 # algo df is 1241/2
+# Replaced space with underscore in column headings per best functionality
 algo_returns.columns=["Algo_1", "Algo_2"]
 print(algo_returns.head())
 
@@ -237,11 +238,7 @@ ax = rolling_Algo1_beta.plot(figsize=(20, 10), title='Rolling 30-Day Beta of Alg
 
 #%%
 
-# ewm some more:
-    
-    
-    
-    
+# ewm some more: 
     
 # code from P4DA:
 #aapl_px = close_px.AAPL['2006' : '2007']
@@ -251,16 +248,51 @@ ax = rolling_Algo1_beta.plot(figsize=(20, 10), title='Rolling 30-Day Beta of Alg
 #ewma60.plot(style='k-', label='EW MA')
 
 Algo1_px = all_returns.Algo_1['2019' : '2021']
-#%%
+
 
 ma21 = Algo1_px.rolling(21, min_periods=7).mean()
-#%%
+
 
 ewma21 = Algo1_px.ewm(span=21).mean()
-#%%
+
 
 ma21.plot(style='k--', label='Simple MA')
-#%%
+
 
 ewma21.plot(style='k-', label='EW MA')
 
+#%%
+
+# Reading data from 1st stock 
+csv_path_g = "C:/Users/CS_Knit_tinK_SC/Documents/My Data Sources/Whale/yr_goog.csv"
+yr_goog = pd.read_csv(
+    csv_path_g, parse_dates=True, index_col="Date", infer_datetime_format=True
+)
+print(yr_goog.head)
+
+#%%
+
+# Reading data from 2nd stock
+csv_path_a = "C:/Users/CS_Knit_tinK_SC/Documents/My Data Sources/Whale/yr_aapl.csv"
+yr_aapl = pd.read_csv(
+    csv_path_a, parse_dates=True, index_col="Date", infer_datetime_format=True
+)
+print(yr_aapl.head)
+
+#%%
+
+# Reading data from 3rd stock
+csv_path_c = "C:/Users/CS_Knit_tinK_SC/Documents/My Data Sources/Whale/yr_cost.csv"
+yr_cost = pd.read_csv(
+    csv_path_c, parse_dates=True, index_col="Date", infer_datetime_format=True
+)
+print(yr_cost.head)
+
+#%%
+
+# Combine all stocks in a single DataFrame
+yr_all = pd.concat([yr_goog, yr_aapl, yr_cost], axis='columns', join = 'inner')
+#%%
+
+# Reorganize portfolio data by having a column per symbol
+yr_all.columns=["Google", "Apple", "CostCo"]
