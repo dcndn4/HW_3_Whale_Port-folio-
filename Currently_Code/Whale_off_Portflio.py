@@ -45,6 +45,7 @@ algo_returns = pd.read_csv(
 )
 
 # algo df is 1241/2
+algo_returns.columns=["Algo_1", "Algo_2"]
 print(algo_returns.head())
 
 #%%
@@ -205,7 +206,7 @@ correlation.plot()
 #%%
 
 # Calculate covariance of a single portfolio
-covariance = all_returns['Algo 1'].cov(all_returns['SP500'])
+covariance = all_returns['Algo_1'].cov(all_returns['SP500'])
 
 # Calculate variance of S&P 500
 variance = all_returns['SP500'].var()
@@ -235,4 +236,31 @@ ax = rolling_Algo1_beta.plot(figsize=(20, 10), title='Rolling 30-Day Beta of Alg
 # no luck so far!
 
 #%%
+
+# ewm some more:
+    
+    
+    
+    
+    
+# code from P4DA:
+#aapl_px = close_px.AAPL['2006' : '2007']
+#ma60 = aapl_px.rolling(30, min_periods=20).mean()
+#ewma60 = aapl_px.ewm(span=30).mean()
+#ma60.plot(style='k--', label='Simple MA')
+#ewma60.plot(style='k-', label='EW MA')
+
+Algo1_px = all_returns.Algo_1['2019' : '2021']
+#%%
+
+ma21 = Algo1_px.rolling(21, min_periods=7).mean()
+#%%
+
+ewma21 = Algo1_px.ewm(span=21).mean()
+#%%
+
+ma21.plot(style='k--', label='Simple MA')
+#%%
+
+ewma21.plot(style='k-', label='EW MA')
 
