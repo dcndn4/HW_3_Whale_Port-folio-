@@ -344,3 +344,12 @@ cost_weight = .34
 yr_wt_returns = goog_weight * yr_all_returns["Google"] + aapl_weight * yr_all_returns["Apple"] + cost_weight * yr_all_returns["CostCo"]
 
 print(yr_wt_returns.head)
+
+#%%
+
+#Join your portfolio returns to the DataFrame that contains all of the portfolio returns
+
+#formula the prior time:
+#all_returns = pd.concat([algo_returns, whale_returns, sp500_returns], axis='columns', join = 'inner')
+
+total_returns = pd.concat([all_returns, yr_all_returns], axis='columns', join = 'inner')
