@@ -328,3 +328,19 @@ yr_all_returns = yr_all.pct_change()
 yr_all_returns=yr_all_returns.dropna()
 # Display sample data
 print(yr_all_returns.head)
+
+#%%
+
+#Calculate the weighted returns for the portfolio assuming an equal number of shares for each stock¶
+
+# Set weights
+weights = [1/3, 1/3, 1/3]
+
+goog_weight = 0.33
+aapl_weight = 0.33
+cost_weight = .34
+# Calculate portfolio return
+
+yr_wt_returns = goog_weight * yr_all_returns["Google"] + aapl_weight * yr_all_returns["Apple"] + cost_weight * yr_all_returns["CostCo"]
+
+print(yr_wt_returns.head)
