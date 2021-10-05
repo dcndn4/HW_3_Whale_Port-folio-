@@ -263,6 +263,28 @@ ewma21.plot(style='k-', label='EW MA')
 
 #%%
 
+#Create Custom Portfolio
+
+#In this section, you will build your own portfolio of stocks, calculate the returns, and compare the results to the Whale Portfolios and the S&P 500.
+
+#    Choose 3-5 custom stocks with at last 1 year's worth of historic prices and create a DataFrame of the closing prices and dates for each stock.
+#    Calculate the weighted returns for the portfolio assuming an equal number of shares for each stock
+#    Join your portfolio returns to the DataFrame that contains all of the portfolio returns
+#    Re-run the performance and risk analysis with your portfolio to see how it compares to the others
+#    Include correlation analysis to determine which stocks (if any) are correlated
+
+#Choose 3-5 custom stocks with at last 1 year's worth of historic prices and create a DataFrame of the closing prices and dates for each stock.
+
+#For this demo solution, we fetch data from three companies listes in the S&P 500 index.
+
+#    GOOG - Google, LLC
+
+#    AAPL - Apple Inc.
+
+#    COST - Costco Wholesale Corporation
+
+#%%
+
 # Reading data from 1st stock 
 csv_path_g = "C:/Users/CS_Knit_tinK_SC/Documents/My Data Sources/Whale/yr_goog.csv"
 yr_goog = pd.read_csv(
@@ -296,3 +318,13 @@ yr_all = pd.concat([yr_goog, yr_aapl, yr_cost], axis='columns', join = 'inner')
 
 # Reorganize portfolio data by having a column per symbol
 yr_all.columns=["Google", "Apple", "CostCo"]
+#%%
+
+# Calculate daily returns
+yr_all_returns = yr_all.pct_change()
+#%%
+
+# Drop NAs
+yr_all_returns=yr_all_returns.dropna()
+# Display sample data
+print(yr_all_returns.head)
