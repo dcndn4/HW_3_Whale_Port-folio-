@@ -286,7 +286,7 @@ ewma21.plot(style='k-', label='EW MA')
 #%%
 
 # Reading data from 1st stock 
-csv_path_g = "C:/Users/CS_Knit_tinK_SC/Documents/My Data Sources/Whale/yr_goog19.csv"
+csv_path_g = "C:/Users/CS_Knit_tinK_SC/Documents/My Data Sources/Whale/yr_goog15.csv"
 yr_goog = pd.read_csv(
     csv_path_g, parse_dates=True, index_col="Date", infer_datetime_format=True
 )
@@ -294,20 +294,51 @@ print(yr_goog.head)
 
 #%%
 
+# Google date work
+
+#sp500_history.set_index(sp500_history['Date'], inplace=True)
+#print(sp500_history.head())
+# yr_goog.set_index(pd.to_datetime(sp500_history['Date'], infer_datetime_format=True), inplace=True)
+# sp500_history.sort_index(inplace=True)
+# print(sp500_history.head())
+
+# Fix Data Types
+
+
+# sp500_history['Close'] = sp500_history['Close'].str.replace('$','')
+# sp500_history['Close']=sp500_history['Close'].astype('float')
+
+
+# print(sp500_history.head())
+# print(sp500_history.dtypes)
+
+yr_goog=yr_goog.dropna()
+yr_goog.columns = ["Google"] 
+print(yr_goog.head)
+
+#%%
+
 # Reading data from 2nd stock
-csv_path_a = "C:/Users/CS_Knit_tinK_SC/Documents/My Data Sources/Whale/yr_aapl19.csv"
+csv_path_a = "C:/Users/CS_Knit_tinK_SC/Documents/My Data Sources/Whale/yr_aapl15.csv"
 yr_aapl = pd.read_csv(
     csv_path_a, parse_dates=True, index_col="Date", infer_datetime_format=True
 )
 print(yr_aapl.head)
 
+yr_aapl=yr_aapl.dropna()
+yr_aapl.columns = ["Apple"] 
+print(yr_aapl.head)
+
 #%%
 
 # Reading data from 3rd stock
-csv_path_c = "C:/Users/CS_Knit_tinK_SC/Documents/My Data Sources/Whale/yr_cost19.csv"
+csv_path_c = "C:/Users/CS_Knit_tinK_SC/Documents/My Data Sources/Whale/yr_cost15.csv"
 yr_cost = pd.read_csv(
     csv_path_c, parse_dates=True, index_col="Date", infer_datetime_format=True
 )
+print(yr_cost.head)
+yr_cost=yr_cost.dropna()
+yr_cost.columns = ["CostCo"] 
 print(yr_cost.head)
 
 #%%
@@ -315,6 +346,8 @@ print(yr_cost.head)
 # Combine all stocks in a single DataFrame
 yr_all = pd.concat([yr_goog, yr_aapl, yr_cost], axis='columns', join = 'inner')
 #%%
+
+sp500_history.set_index(pd.to_datetime(sp500_history['Date'], infer_datetime_format=True), inplace=True)
 #%%
 #%%
 #%%
@@ -341,7 +374,7 @@ yr_all = pd.concat([yr_goog, yr_aapl, yr_cost], axis='columns', join = 'inner')
 
 
 # Reorganize portfolio data by having a column per symbol
-yr_all.columns=["Google", "Apple", "CostCo"]
+#yr_all.columns=["Google", "Apple", "CostCo"]
 #%%
 
 # Calculate daily returns
@@ -350,6 +383,7 @@ yr_all_returns = yr_all.pct_change()
 
 # Drop NAs
 yr_all_returns=yr_all_returns.dropna()
+yr_all_returns.index=yr_all_returns.index.date
 # Display sample data
 print(yr_all_returns.head)
 
@@ -373,8 +407,13 @@ print(yr_wt_returns.head)
 
 #Join your portfolio returns to the DataFrame that contains all of the portfolio returns
 
-#formula the prior time:
-#all_returns = pd.concat([algo_returns, whale_returns, sp500_returns], axis='columns', join = 'inner')
+# change index of all_returns dateframe to be date only
+
+
+all_returns.index=all_returns.index.date
+print(all_returns.head)
+
+#%%
 
 #print(sp500_history.dtypes)
 print(all_returns.dtypes) 
@@ -382,3 +421,8 @@ print(yr_all_returns.dtypes)
 
 #%%
 total_returns = pd.concat([all_returns, yr_all_returns], axis='columns', join = 'inner')
+print(total_returns.dtypes)
+
+#%%
+# Only compare dates where return data exists for all the stocks (drop NaNs)
+total_returns=total_returns.dropna()
