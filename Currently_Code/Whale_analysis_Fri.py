@@ -415,7 +415,7 @@ print(all_returns.head)
 
 #%%
 
-#print(sp500_history.dtypes)
+#check data types)
 print(all_returns.dtypes) 
 print(yr_all_returns.dtypes)
 
@@ -426,3 +426,37 @@ print(total_returns.dtypes)
 #%%
 # Only compare dates where return data exists for all the stocks (drop NaNs)
 total_returns=total_returns.dropna()
+
+#%%
+
+# Re-run the risk analysis with your portfolio to see how it compares to the others
+
+# Calculate the Annualized Standard Deviation
+
+# Calculate the annualized `std` (252 trading days, same as earlier)
+
+
+annualized_total_returns = total_returns * np.sqrt(252)
+
+print(annualized_total_returns)
+#%%
+
+# Calculate and plot rolling std with 21-day window
+
+# Calculate rolling standard deviation
+
+# Plot rolling standard deviation
+
+# Plot the rolling standard deviation using 21-day window
+total_returns.rolling(window=21).std().plot()
+
+#%%
+
+# Calculate and plot the correlation
+
+# Calculate and plot the correlation
+
+T_correlation = total_returns.corr()
+# Display the correlation matrix
+T_correlation
+T_correlation.plot()
