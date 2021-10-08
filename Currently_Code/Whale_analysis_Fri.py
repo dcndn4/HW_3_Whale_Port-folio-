@@ -262,6 +262,33 @@ ma21.plot(style='k--', label='Simple MA')
 ewma21.plot(style='k-', label='EW MA')
 
 #%%
+#%%
+#%%
+
+# Sharpe ratio
+# some reference examples:
+   
+# From Sharpe Ratio demo
+# sharpe_ratios =  Numerator: ((all_portfolios_returns.mean()-all_portfolios_returns['rf_rate'].mean()) * 252) 
+# /
+#   Denominator:  (all_portfolios_returns.std() * np.sqrt(252))
+
+# From Risky Business demo
+# sharpe_ratios = Numerator: (all_returns.mean() * 252) 
+# / 
+#   Denominator:  (all_portfolio_std * np.sqrt(252))
+
+#print(sharpe_ratios.head())
+
+sharpe_ratios = (all_returns.mean() * 252)/(daily_std * np.sqrt(252))
+
+print(sharpe_ratios)
+#%%
+
+# Visualize the sharpe ratios as a bar plot
+sharpe_ratios.plot(kind="bar", title="Sharpe Ratios")
+
+#%%
 
 #Create Custom Portfolio
 
