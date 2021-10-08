@@ -460,3 +460,29 @@ T_correlation = total_returns.corr()
 # Display the correlation matrix
 T_correlation
 T_correlation.plot()
+
+#%%
+
+# Calculate and Plot Rolling 60-day Beta for Your Portfolio compared to the S&P 500
+
+#%%
+
+# Calculate covariance of a single portfolio
+covariance = total_returns['CostCo'].cov(all_returns['SP500'])
+
+#%%
+
+# Calculate variance of S&P 500
+variance = all_returns['SP500'].var()
+
+# Computing beta
+CostCo_beta = covariance/variance
+
+#%%
+
+
+# Plot beta trend
+rolling_CostCo_covariance = total_returns['CostCo'].rolling(window=30).cov(all_returns['SP500'])
+rolling_variance = all_returns['SP500'].rolling(window=30).var()
+rolling_CostCo_beta = rolling_CostCo_covariance / rolling_variance
+ax = rolling_CostCo_beta.plot(figsize=(20, 10), title='Rolling 30-Day Beta of CostCo')
