@@ -217,7 +217,32 @@ A beta of 1 is assigned to a relevant market index. Then if a stock has a beta o
 
 Beta exists in a context provided by a benchmark (such as the s&p 500), and that benchmark needs to be relevant to that stock in order for the results to be useful. A numerical way to indicate the relevance of the benchmark to the stock is the R-squared value -- the higher that is, the more relevant the benchmark is. (per investopedia)
 
-### Sharpe ratio - excess reward associated wtih investment after risk has been accounted for
+### Sharpe ratio - risk-adjusted investment portfolio analysis measure (from Wikipedia)
+
+The Sharpe ratio was created by William Sharpe in 1966 (from Investopedia). It has been a popular reference point for investors ever since, even moreso since Professor Sharpe won a Nobel Memorial Prize in Economic Sciences in 1990 for his work on the Capital Asset Pricing Model (CAPM). He learned of the work of economist Harry Markowitz while at UCLA, and got his PhD under Markowitz guidance in 1961. He developed the Sharpe Ratio in 1966. 
+
+The Sharpe ratio divides the profitability of a portfolio by its volatility, to give a measurement of the additional amount of return that an investor receives per unit of increase in risk.
+
+Example (from Wikipedia):
+
+Investment Manager A provides return of 15%, but their portfolio has a standard deviation of 8%.
+Investment Manager B provides return of 12%, and that is from a portfolio with a standard deviation of only 5%.
+
+This example includes a risk-free rate of 5%.
+
+The Sharpe Ratio for Manager A is 1.25
+The Sharpe Ratio for Manager B is 1.4
+
+Higher numbers are better, so Manager B would be the better choice if consideration is being given to both return and risk. 
+
+Benchmarks for Sharpe Ratio: 1-2 is good, 2-3 is very good, and over 3 is excellent. 
+
+Note from Homework assignment:
+> Sharpe Ratios
+> 
+> In reality, investment managers and their institutional investors look at the ratio of return-to-risk, and not just returns alone. After all, if you could invest in >  one of two portfolios, and each offered the same 10% return, yet one offered lower risk, you'd take that one, right?
+
+The sharpe ratio return 
 
 Formula:
 
