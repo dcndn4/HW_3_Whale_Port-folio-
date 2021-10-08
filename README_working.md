@@ -102,10 +102,15 @@ Standard deviation was explored using python prior to pandas section, as pandas 
 ## Primary relationship between standard deviation (1 vs. 2 etc..) and risk/reward. 
         
 >   []  1 std dev may equate to being in the group of 70% of the total population of values
+>   
 >   []  2 std dev for instance might be within 95% of total population of the group
+>   
 >   []  3 std dev = 100% basically
+>   
 >   []  bell curve
+>   
 >   []  little greek o symbol
+>   
 >   []  is denominator for Sharpe Ratio
         
 ### Standard deviation applied to stock (morningstar classroom)
@@ -211,6 +216,19 @@ A beta of 1 is assigned to a relevant market index. Then if a stock has a beta o
 (relationship between Beta and Morgan Stanley? not sure..)
 
 Beta exists in a context provided by a benchmark (such as the s&p 500), and that benchmark needs to be relevant to that stock in order for the results to be useful. A numerical way to indicate the relevance of the benchmark to the stock is the R-squared value -- the higher that is, the more relevant the benchmark is. (per investopedia)
+
+### Sharpe ratio - excess reward associated wtih investment after risk has been accounted for
+
+Formula:
+
+> Annualized Annual Returns 
+> 
+>  ------------ over ------------------
+>  
+>  Portfolio Standard Deviation (annualized)
+
+To get annualized annual returns, take Portfolio Returns - Benchmark return (ie. TBill).
+
 
 
 
