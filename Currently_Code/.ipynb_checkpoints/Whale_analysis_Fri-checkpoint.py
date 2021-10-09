@@ -60,11 +60,6 @@ algo_returns=algo_returns.dropna()
 
 #%%
 
-# S&P 500 Returns
-
-# Read the S&P 500 historic closing prices and create a new daily returns DataFrame from the data.
-
-
 #file_path = Path="C:/Users/CS_Knit_tinK_SC/Documents/My Data Sources/loans.csv"
 #csv_path = Path="C:/Users/CS_Knit_tinK_SC/Documents/My Data Sources/goog_google_finance.csv"
 csv_path_s = "C:/Users/CS_Knit_tinK_SC/Documents/My Data Sources/Whale/sp500_history.csv"
@@ -121,21 +116,9 @@ sp500_returns.columns = ["SP500"]
 
 #%%
 
-# Combine Whale, Algorithmic, and S&P 500 Returns
-
-
 all_returns = pd.concat([algo_returns, whale_returns, sp500_returns], axis='columns', join = 'inner')
 
 #%%
-#%%
-#%%
-
-# Conduct Quantitative Analysis
-
-# In this section, you will calculate and visualize performance and risk metrics for the portfolios.
-# Performance Anlysis
-# Calculate and Plot the daily returns.
-
 
 # Plot daily returns of all portfolios
 algo_returns.plot()
@@ -155,26 +138,10 @@ cumulative_whale_returns.plot()
 cumulative_sp500_returns.plot()
 
 #%%
-#%%
-
-# Risk Analysis
-
-# Determine the risk of each portfolio:
-
-# Create a box plot for each portfolio.
-# Calculate the standard deviation for all portfolios
-# Determine which portfolios are riskier than the S&P 500
-# Calculate the Annualized Standard Deviation
-
-# Create a box plot for each portfolio
-
 
 all_returns.plot.box()
 
 #%%
-
-# Calculate the daily standard deviations of all portfolios
-
 daily_std = all_returns.std()
 print(f' Daily Standard Deviations are: \n{daily_std}')
 
@@ -199,7 +166,6 @@ annualized_std = daily_std * np.sqrt(252)
 annualized_std = annualized_std.sort_values(ascending=False)
 print(annualized_std)
 
-#%%
 #%%
 
 #Rolling Statistics
@@ -259,14 +225,6 @@ ax = rolling_Algo1_beta.plot(figsize=(20, 10), title='Rolling 30-Day Beta of Alg
 
 #%%
 
-# Rolling Statistics Challenge: Exponentially Weighted Average
-
-# An alternative way to calculate a rolling window is to take the exponentially weighted moving average. 
-# This is like a moving window average, but it assigns greater importance to more recent observations. 
-# Try calculating the ewm with a 21-day half-life.
-
-#%%
-
 # ewm some more: 
     
 # code from P4DA:
@@ -291,16 +249,7 @@ ma21.plot(style='k--', label='Simple MA')
 ewma21.plot(style='k-', label='EW MA')
 
 #%%
-
-# Sharpe Ratios
-
-# In reality, investment managers and thier institutional investors look at the ratio of return-to-risk, 
-# and not just returns alone. 
-# After all, if you could invest in one of two portfolios, and each offered the same 10% return, 
-# yet one offered lower risk, you'd take that one, right?
-
-# Using the daily returns, calculate and visualize the Sharpe ratios using a bar plot
-
+#%%
 #%%
 
 # Sharpe ratio
@@ -329,8 +278,6 @@ print(f'Sharpe Ratios are: {sharpe_ratios}')
 # Visualize the sharpe ratios as a bar plot
 sharpe_ratios.plot(kind="bar", title="Sharpe Ratios")
 
-#%%
-#%%
 #%%
 
 #Create Custom Portfolio
@@ -362,7 +309,25 @@ yr_goog = pd.read_csv(
 )
 print(yr_goog.head)
 
+#%%
 
+# Google date work
+
+#sp500_history.set_index(sp500_history['Date'], inplace=True)
+#print(sp500_history.head())
+# yr_goog.set_index(pd.to_datetime(sp500_history['Date'], infer_datetime_format=True), inplace=True)
+# sp500_history.sort_index(inplace=True)
+# print(sp500_history.head())
+
+# Fix Data Types
+
+
+# sp500_history['Close'] = sp500_history['Close'].str.replace('$','')
+# sp500_history['Close']=sp500_history['Close'].astype('float')
+
+
+# print(sp500_history.head())
+# print(sp500_history.dtypes)
 
 yr_goog=yr_goog.dropna()
 yr_goog.columns = ["Google"] 
@@ -399,7 +364,7 @@ print(yr_cost.head)
 yr_all = pd.concat([yr_goog, yr_aapl, yr_cost], axis='columns', join = 'inner')
 #%%
 
-# sp500_history.set_index(pd.to_datetime(sp500_history['Date'], infer_datetime_format=True), inplace=True)
+sp500_history.set_index(pd.to_datetime(sp500_history['Date'], infer_datetime_format=True), inplace=True)
 
 #%%
 
@@ -475,7 +440,7 @@ print(f' Total Daily Standard Deviations are: \n{total_daily_std}')
 
 
 
-# Sort  the daily standard deviation results
+# Calculate  the daily standard deviation of S&P 500
 
 total_daily_std = total_daily_std.sort_values(ascending=False)
 print(f' Sorted Total Daily Standard Deviations are: \n{total_daily_std}')
@@ -491,11 +456,11 @@ total_annualized_std = total_annualized_std.sort_values(ascending=False)
 print(total_annualized_std)
 print(f' Sorted Total Annualized Standard Deviations are: \n{total_annualized_std}')
 #%%
-# not asked for
 
-# annualized_total_returns = total_returns * np.sqrt(252)
 
-# print(annualized_total_returns)
+annualized_total_returns = total_returns * np.sqrt(252)
+
+print(annualized_total_returns)
 #%%
 
 # Calculate and plot rolling std with 21-day window
@@ -527,7 +492,6 @@ T_correlation.plot()
 # Calculate covariance of a single portfolio
 covariance = total_returns['CostCo'].cov(all_returns['SP500'])
 print(covariance)
-
 
 #%%
 
@@ -571,11 +535,3 @@ print(total_sharpe_ratios)
 
 # Visualize the sharpe ratios as a bar plot
 total_sharpe_ratios.plot(kind="bar", title="Sharpe Ratios")
-
-#%%
-
-# How does your portfolio do?
-
-# Write your answer here!
-
-# My portfolio (given) of Apple, Google and Costco performs well. Its sharpe ratios are inbetween that of the algorithmic-1 portfolio and the algorithmic-2 portfolio. 
