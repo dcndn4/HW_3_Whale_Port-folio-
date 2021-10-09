@@ -188,18 +188,9 @@ print(f' The daily Standard deviations are: \n{daily_std}')
 
 daily_std = daily_std.sort_values(ascending=False)
 
-#%%
+print(f' The sorted daily Standard deviations are: \n{daily_std}')
+print(f'Berkshire Hathaway (.012919) and Tiger Global (.010894) are riskier than the S&P 500')
 
-# Determine which portfolios are riskier than the S&P 500
-# do for loop, identify items in riskier file??
-
-spcompare = .00855373
-#%%
-
-for item in daily_std:
-    print(item)
-    if item > spcompare:
-        print(f'this std dev for name of  is riskier than the sp500')
 
 
 #%%

@@ -188,18 +188,9 @@ print(f' The daily Standard deviations are: \n{daily_std}')
 
 daily_std = daily_std.sort_values(ascending=False)
 
-#%%
+print(f' The sorted daily Standard deviations are: \n{daily_std}')
+print(f'Berkshire Hathaway (.012919) and Tiger Global (.010894) are riskier than the S&P 500')
 
-# Determine which portfolios are riskier than the S&P 500
-# do for loop, identify items in riskier file??
-
-spcompare = .00855373
-#%%
-
-for item in daily_std:
-    print(item)
-    if item > spcompare:
-        print(f'this std dev for name of  is riskier than the sp500')
 
 
 #%%
@@ -588,4 +579,4 @@ total_sharpe_ratios.plot(kind="bar", title="Sharpe Ratios")
 
 # Write your answer here!
 
-# My portfolio (given) of Apple, Google and Costco performs well. Its sharpe ratios are inbetween that of the algorithmic-1 portfolio and the algorithmic-2 portfolio. 
+# My portfolio (given) of Apple, Google and Costco performs well. Its Sharpe ratios are inbetween that of the algorithmic-1 portfolio and the algorithmic-2 portfolio. 
