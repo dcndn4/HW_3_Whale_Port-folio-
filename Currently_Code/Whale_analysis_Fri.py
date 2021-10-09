@@ -143,13 +143,13 @@ all_returns.plot.box()
 
 #%%
 daily_std = all_returns.std()
-print(f' Daily Standard Returns are: \n{daily_std}')
+print(f' Daily Standard Deviations are: \n{daily_std}')
 
 #%%
 
 # Calculate  the daily standard deviation of S&P 500
 
-print(f' The daily Standard Returns are: \n{daily_std}')
+print(f' The daily Standard deviations are: \n{daily_std}')
 
 # Calculate  the daily standard deviation of S&P 500
 
@@ -225,19 +225,6 @@ ax = rolling_Algo1_beta.plot(figsize=(20, 10), title='Rolling 30-Day Beta of Alg
 
 #%%
 
-#Rolling Statistics Challenge: Exponentially Weighted Average
-
-#An alternative way to calculate a rolling window is to take the exponentially weighted moving average.
-# This is like a moving window average, 
-#but it assigns greater importance to more recent observations. 
-#Try calculating the ewm with a 21-day half-life.
-
-# Use `ewm` to calculate the rolling window
-
-# no luck so far!
-
-#%%
-
 # ewm some more: 
     
 # code from P4DA:
@@ -280,9 +267,12 @@ ewma21.plot(style='k-', label='EW MA')
 
 #print(sharpe_ratios.head())
 
+print(f'S.R. num = {all_returns.mean() * 252}')
+print(f'S.R. den = {daily_std * np.sqrt(252)}')
+
 sharpe_ratios = (all_returns.mean() * 252)/(daily_std * np.sqrt(252))
 
-print(sharpe_ratios)
+print(f'Sharpe Ratios are: {sharpe_ratios}')
 #%%
 
 # Visualize the sharpe ratios as a bar plot
@@ -375,27 +365,6 @@ yr_all = pd.concat([yr_goog, yr_aapl, yr_cost], axis='columns', join = 'inner')
 #%%
 
 sp500_history.set_index(pd.to_datetime(sp500_history['Date'], infer_datetime_format=True), inplace=True)
-#%%
-#%%
-#%%
-#%%
-
-# yr_all.set_index(pd.to_datetime(yr_all['Date'], infer_datetime_format=True), inplace=True)
-# yr_all.sort_index(inplace=True)
-# print(yr_all.head())
-
-#%%
-#%%
-#%%
-#%%
-#%%
-
-
-# Reset Date index
-# not sure how this is to be written..
-
-# yr_all.reindex_like[all_returns]
-
 
 #%%
 
@@ -462,6 +431,32 @@ total_returns=total_returns.dropna()
 
 # Calculate the annualized `std` (252 trading days, same as earlier)
 
+# Calculate the annualized standard deviation (252 trading days)
+
+total_daily_std = total_returns.std()
+print(f' Total Daily Standard Deviations are: \n{total_daily_std}')
+
+#%%
+
+
+
+# Calculate  the daily standard deviation of S&P 500
+
+total_daily_std = total_daily_std.sort_values(ascending=False)
+print(f' Sorted Total Daily Standard Deviations are: \n{total_daily_std}')
+
+#%%
+
+
+
+# Determine which portfolios are riskier than the S&P 500
+# do for loop, identify items in riskier file??
+total_annualized_std = total_daily_std * np.sqrt(252)
+total_annualized_std = total_annualized_std.sort_values(ascending=False)
+print(total_annualized_std)
+print(f' Sorted Total Annualized Standard Deviations are: \n{total_annualized_std}')
+#%%
+
 
 annualized_total_returns = total_returns * np.sqrt(252)
 
@@ -496,6 +491,7 @@ T_correlation.plot()
 
 # Calculate covariance of a single portfolio
 covariance = total_returns['CostCo'].cov(all_returns['SP500'])
+print(covariance)
 
 #%%
 
@@ -504,6 +500,7 @@ variance = all_returns['SP500'].var()
 
 # Computing beta
 CostCo_beta = covariance/variance
+print(CostCo_beta)
 
 #%%
 
@@ -513,3 +510,28 @@ rolling_CostCo_covariance = total_returns['CostCo'].rolling(window=30).cov(all_r
 rolling_variance = all_returns['SP500'].rolling(window=30).var()
 rolling_CostCo_beta = rolling_CostCo_covariance / rolling_variance
 ax = rolling_CostCo_beta.plot(figsize=(20, 10), title='Rolling 30-Day Beta of CostCo')
+
+#%%
+
+# Calculate Annualzied Sharpe Ratios
+
+# Annualized Sharpe Ratios
+
+# Calculate sharpe ratio
+#sharpe_ratios = (total_returns.mean() * 252) / (all_portfolio_std * np.sqrt(252))
+#sharpe_ratios.head()
+
+#annualized_total_returns = total_returns * np.sqrt(252) -- part done already
+
+print(f'S.R. num = {total_returns.mean() * 252}')
+print(f'S.R. den = {total_annualized_std}')
+#%%
+
+
+total_sharpe_ratios = (total_returns.mean() * 252)/(total_annualized_std)
+
+print(total_sharpe_ratios)
+#%%
+
+# Visualize the sharpe ratios as a bar plot
+total_sharpe_ratios.plot(kind="bar", title="Sharpe Ratios")
