@@ -41,7 +41,7 @@ Here is the "Returns analysis example" text:
 
 Standard deviation measures the distance between a set of values, and their center gravity basically (mathematically, by center gravity we mean average) (class mtls)
 
-Standard deviation is a parametric statistical measure (wikipedia), meaning it describes the data set within certain assumptions (such as mean distribution/ bell curve).  When a data set pattern is outside that usual distribution, a box plot can be utilized. Box plots contain information about the standard distribution of results, but also provide more meaningful information about all the rest of the data points. 
+Daily standard deviation is a parametric statistical measure (wikipedia), meaning it describes the data set within certain assumptions (such as mean distribution/ bell curve).  When a data set pattern is outside that usual distribution, a box plot can be utilized. Box plots contain information about the standard distribution of results, but also provide more meaningful information about all the rest of the data points. 
         
 >   From investopedia: measures the dispersion of a dataset relative to its mean (i.e. average). It is calculated as the square root of variance: each data point's deviation from the mean. The greater that distance, the greater the standard deviation. 
         
@@ -74,6 +74,10 @@ The standard deviation for portfolio A is 1.52, while for portfolio B it is 7.24
 Variance itself is an ingredient within standard deviation.. is usually not part of the analysis itself because it doesn't graph out in a way that is helpful (investopedia). Also, variance may end up being in a different unit of measurement than the data itself, which adds to the confusion.
 
 An asset's volatility is "an annualized measure of dispersion in the stochastic process that is used to model the log returns." Most commonly modeled using          standard deviation (sigma). (~Carol Alexander, Practical Financial Econometrics, 90)
+
+Volatility is mainly captured within the annualized standard deviation, which multiplies the internal standard deviation (daily, weekly or monthly) by the square root of the number of intervals in the year (250, 52 or 12). That annualized standard deviation is usually in the range of 10% to 30%. Nasdaq's volatility (annualized standard deviation) is 28.8%, while the S&P 500's volatility is 18.1%. 
+
+
     
   ### Benchmarks for standard deviation: 
   > Volatile stocks have high standard deviation
