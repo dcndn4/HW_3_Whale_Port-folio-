@@ -1,0 +1,3 @@
+I was slow to realize that the new portfolio (Google, Apple and Costco) needed to be set to overlap with the dates of the given portfolios.
+
+I had mistakenly created a datafile with more recent dates. 
