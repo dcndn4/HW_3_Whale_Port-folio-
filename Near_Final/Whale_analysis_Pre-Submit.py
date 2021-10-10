@@ -432,8 +432,12 @@ cost_weight = .34
 # Calculate portfolio return
 
 yr_wt_returns = goog_weight * yr_all_returns["Google"] + aapl_weight * yr_all_returns["Apple"] + cost_weight * yr_all_returns["CostCo"]
+#yr_wt_returns.rename(), = ["Big_3"] 
 
 print(yr_wt_returns.head)
+#%%
+
+#yr_wt_returns.append(yr_wt_returns.sum().rename('Total'))
 
 #%%
 
@@ -452,7 +456,9 @@ print(all_returns.dtypes)
 print(yr_all_returns.dtypes)
 
 #%%
-total_returns = pd.concat([all_returns, yr_all_returns], axis='columns', join = 'inner')
+total_returns = pd.concat([all_returns, yr_wt_returns], axis='columns', join = 'inner')
+total_returns.columns=['Algo_1', 'Algo_2', 'Fund_Mtmg', 'Paulson', 'Global', 'BH', 'SP500', 'Big_3']
+#%%
 print(total_returns.dtypes)
 
 #%%
